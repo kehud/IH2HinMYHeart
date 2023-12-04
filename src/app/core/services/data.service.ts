@@ -1,23 +1,58 @@
+import { HttpStatusCode, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { VideoListModel } from 'src/app/core/models/videolist-model';
+import { environment } from 'src/environments/environments';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
-  contacts = [
-    {id: 1, name: "Contact 001", description: "Contact 001 des", email: "c001@email.com"},
-    {id: 2, name: "Contact 002", description: "Contact 002 des", email: "c002@email.com"},
-    {id: 3, name: "Contact 003", description: "Contact 003 des", email: "c003@email.com"},
-    {id: 4, name: "Contact 004", description: "Contact 004 des", email: "c004@email.com"}
+  //headers
+  private headers = {
+    "Accept": "*/*",
+    "Content-Type": "application/json"
+  };
+
+
+
+
+  videoList = [
+    {VideoID: 1, Title: "Video 001", FullDescription: "Liat Carmeli and Tzipi Negev converstion", Duration: 15, VideoLink: "https://www.youtube.com/embed/uPqK6MAISTs?si=ll7ZI8nMrbjHOJ7z"},
+    {VideoID: 2, Title: "Video 002", FullDescription: "Tzipi Negev talking about Yoga and Meditation", Duration: 12, VideoLink: "https://www.youtube.com/embed/7qciYQFtKFg?si=oJ6pTtsuYfL_cyGt"}
   ];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  public getContacts():Array<{id: any, name: any, description: any, email: any}>{
-    return this.contacts;
+  public getVideos():Array<{VideoID: number, Title: string, FullDescription: string, Duration: number, VideoLink: string}>{
+    return this.videoList;
   }
-  public createContact(contact: {id: any, name: any, description: any, email: any}){
-    this.contacts.push(contact);
-  }
+
+
+  //1 getVideos
+  // public getVideos(): Observable<VideoListModel[]>{
+  //   return this.httpClient.get<VideoListModel[]>(`${environment.api}/getVideos`,
+  //   {
+  //     headers: {
+  //       ...this.headers
+  //     }
+  //   });
+  // }
+
+
+//2 getVideosbyid
+  // public getBusinessByCategoryID(CategoryID: number): Observable<BusinessModel[]>{
+  //   return this.httpClient.get<BusinessModel[]>(`${environment.api}/getBusinessByCategoryID/` + CategoryID,
+  //   {
+  //     headers: {
+  //       ...this.headers
+  //     }
+  //   });
+  // }
+
+
+
+
 }
