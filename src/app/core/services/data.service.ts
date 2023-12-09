@@ -20,8 +20,8 @@ export class DataService {
 
 
   videoList = [
-    {VideoID: 1, Title: "Video 001", FullDescription: "Liat Carmeli and Tzipi Negev converstion", Duration: 15, VideoLink: "https://www.youtube.com/embed/uPqK6MAISTs?si=ll7ZI8nMrbjHOJ7z"},
-    {VideoID: 2, Title: "Video 002", FullDescription: "Tzipi Negev talking about Yoga and Meditation", Duration: 12, VideoLink: "https://www.youtube.com/embed/7qciYQFtKFg?si=oJ6pTtsuYfL_cyGt"}
+    {VideoID: 1, Title: "Video 001", FullDescription: "ציפי נגב וליאת כרמלי שיחה על ויסות אישי והדדי", Duration: 15, VideoLink: "https://www.youtube.com/embed/uPqK6MAISTs?si=ll7ZI8nMrbjHOJ7z"},
+    {VideoID: 2, Title: "Video 002", FullDescription: "ציפי נגב כלים לרגיעה", Duration: 12, VideoLink: "https://www.youtube.com/embed/7qciYQFtKFg?si=oJ6pTtsuYfL_cyGt"}
   ];
 
   constructor(private httpClient: HttpClient) { }
