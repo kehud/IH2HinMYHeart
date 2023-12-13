@@ -1,86 +1,32 @@
-<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">IH2H POM App</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-  
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/video-list">POM VIdeos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/card-list">Affirmation Cards</a>
-        </li>
-  
-      </ul>
-    </div>
-  </nav>   -->
-
-
-
   <div class="container">
-
-  <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light" aria-label="Third navbar example">
-    <div class="container-fluid" style="margin-top: 10%;">
-      <a class="logo" href="#"><img width="55px" height="auto"  src="./../../../../assets/images/logo.png" alt="Logo"/></a>
-      <a class="navbar-brand" href="#">Power Of The Morning</a>
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse" id="navbarsExample03">
-        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">ראשי</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">סרטוני POM</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="nav-link" routerLink="/video-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">הדרכה</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="nav-link" routerLink="/video-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">נשימות</a></li>
-              <li><a class="nav-link" routerLink="/video-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">יוגה</a></li>
-              <li><a class="nav-link" routerLink="/video-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">מדיטציה</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/card-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">כרטיסיות</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-</div>
-
-
-<!-- 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light" aria-label="Third navbar example">
+      <div class="container-fluid">
+        <a class="logo"><img width="55px" height="auto" src="./../../../../assets/images/logo.png" alt="Logo"/></a>
+        <a class="navbar-brand">Power Of The Morning</a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Disabled</a>
-                </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        <div class="navbar-collapse collapse" id="navbarsExample03">
+          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">ראשי</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">סרטוני POM</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" routerLink="/video-list/1" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">הדרכה</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" routerLink="/video-list/2" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">נשימות</a></li>
+                <li><a class="dropdown-item" routerLink="/video-list/3" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">יוגה</a></li>
+                <li><a class="dropdown-item" routerLink="/video-list/4" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">מדיטציה</a></li>
+                <li><a class="dropdown-item" routerLink="/video-list/5" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">מיינדפולנס</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/card-list" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">כרטיסיות</a>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav> -->
+      </div>
+    </nav>
+</div>

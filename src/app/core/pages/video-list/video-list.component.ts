@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from 'src/app/core/services/data.service';
 //import { ApiEndpointConstants } from 'src/app/core/constants/ApiEndpointsConstant';
-//import { VideolistModel } from 'src/app/core/models/videolist-model';
+import { VideoListModel } from 'src/app/core/models/videolist-model';
 
 
 @Component({
@@ -13,24 +14,29 @@ import { DataService } from 'src/app/core/services/data.service';
 
 export class VideoListComponent implements OnInit {
   
-  videolistModel: any; //Array<VideolistModel>;
+  videolistRecords: Array<VideoListModel> = [];
+  categoryId!: number;
 
-  constructor(private dataService:DataService, public domSanitizer: DomSanitizer){}
-
+  constructor(private dataService:DataService, private activatedRoute:ActivatedRoute, public domSanitizer: DomSanitizer){
+    this.activatedRoute.params.subscribe(q=>{
+      this.categoryId = q['id'];
+    })
+  }
+ 
   ngOnInit(): void {
-    this.load();
+    this.load(this.categoryId);
   }
 
   //load
-   async load(){
+  load(Id:number){
     let _videolistModel: any;
-    _videolistModel = this.dataService.getVideos();
-    this.videolistModel = _videolistModel;
+    _videolistModel = this.dataService.getVideos(Id);
+    this.videolistRecords = _videolistModel;
   }
 
-  getvideoLink(videoID:number): any {
+  getVideoLink(videoID:number): any {
     let _videoLink: any;
-    _videoLink = this.domSanitizer.bypassSecurityTrustResourceUrl(this.videolistModel[videoID - 1].VideoLink);
+    _videoLink = this.domSanitizer.bypassSecurityTrustResourceUrl(this.videolistRecords?.filter(x => x.VideoID == videoID).map(x => x.VideoLink).toString());    
     return _videoLink;
   }
 

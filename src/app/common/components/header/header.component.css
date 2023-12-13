@@ -2,3 +2,10 @@
     padding:2px;
     margin-left: 7px;
 }
+
+
+@media (max-width: 576px) {
+    .container-fluid {
+      margin-top: 10%;
+    }
+} 

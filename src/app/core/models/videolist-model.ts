@@ -2,6 +2,7 @@ export interface VideoListModel {
     VideoID: number
     Title: string
     FullDescription: string
-    Duration: number
+    Duration: string
     VideoLink: string  
 }
+ 
