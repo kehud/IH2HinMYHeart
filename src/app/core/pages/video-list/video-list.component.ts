@@ -20,11 +20,12 @@ export class VideoListComponent implements OnInit {
   constructor(private dataService:DataService, private activatedRoute:ActivatedRoute, public domSanitizer: DomSanitizer){
     this.activatedRoute.params.subscribe(q=>{
       this.categoryId = q['id'];
+      this.load(this.categoryId);
     })
   }
  
   ngOnInit(): void {
-    this.load(this.categoryId);
+    // this.load(this.categoryId);
   }
 
   //load
@@ -32,6 +33,7 @@ export class VideoListComponent implements OnInit {
     let _videolistModel: any;
     _videolistModel = this.dataService.getVideos(Id);
     this.videolistRecords = _videolistModel;
+    console.log("load");
   }
 
   getVideoLink(videoID:number): any {

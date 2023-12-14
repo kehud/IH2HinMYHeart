@@ -11,13 +11,13 @@
           <div class="card shadow-sm">
             <iframe width="100%" height="225" [src]="getVideoLink(video.VideoID)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
             <div class="card-body">
-              <p class="card-text">{{video.FullDescription}}</p>
+              <p class="card-text" [(ngModel)]="video.FullDescription" ngDefaultControl >{{video.FullDescription}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                 </div>
-                <small class="text-body-secondary">{{video.Duration}} דק'</small>
+                <small class="text-body-secondary" [(ngModel)]="video.Duration" ngDefaultControl>{{video.Duration}} דק'</small>
               </div>
             </div>
           </div>
