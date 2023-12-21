@@ -1,23 +1,37 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import KeenSlider, { KeenSliderInstance, TrackDetails } from "keen-slider"
-
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
   styleUrls: ["../../../../../node_modules/keen-slider/keen-slider.min.css",'./card-list.component.css']
 })
-export class CardListComponent {
+
+export class CardListComponent implements OnInit{
+
+  constructor(private spinner: NgxSpinnerService){
+  }
 
   @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
   
   images: String[] = [
     "./../../../../assets/cards/1.png",
     "./../../../../assets/cards/2.png",
-    "./../../../../assets/cards/3.png"
+    "./../../../../assets/cards/3.png",
+    "./../../../../assets/cards/4.png"
   ]
 
   details: TrackDetails | undefined
   slider!:  KeenSliderInstance
+
+  ngOnInit(): void {
+    /** spinner starts on init */
+   this.spinner.show();
+   setTimeout(() => {
+     /** spinner ends after 5 seconds */
+     this.spinner.hide();
+   }, 2000);
+  }
 
   scaleStyle(idx: any) {
     if (!this.details) return {}

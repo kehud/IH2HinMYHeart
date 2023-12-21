@@ -1,10 +1,17 @@
 
 <section class="py-5 text-center container"></section>
 
-<div class="album py-5 bg-body-tertiary"style="background-color: black;">
+<!--spinner  -->
+<div style="position: relative">
+  <ngx-spinner color = "lightblue" type="ball-scale-multiple"><p style="color: lightblue" > לנשום... </p></ngx-spinner>
+</div>
+
+<!-- slider -->
+<div class="album py-5 bg-body-tertiary">
     <div class="container" style="height: 100vh;">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
             <div class="col">
+
               <div class="card shadow-sm">
                 <div class="keen-slider zoom-out" #sliderRef>
                     <div class="keen-slider__slide zoom-out__slide" *ngFor="let src of images; let idx = index">
@@ -13,8 +20,8 @@
                     </div>
                     </div>
                 </div>
-
               </div>
+              
             </div>
           </div>
     </div>

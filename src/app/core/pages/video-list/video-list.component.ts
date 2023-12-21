@@ -28,12 +28,7 @@ export class VideoListComponent implements OnInit {
   }
  
   ngOnInit(): void {
-        /** spinner starts on init */
-        this.spinner.show();
-        setTimeout(() => {
-          /** spinner ends after 5 seconds */
-          this.spinner.hide();
-        }, 1000);
+       
   }
 
   load(Id:any){
