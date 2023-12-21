@@ -19,7 +19,7 @@ export class DataService {
   videoList = [
     {VideoID: 1, CategoryID: 1, Title: "Video 001", FullDescription: "ציפי נגב וליאת כרמלי שיחה על ויסות אישי והדדי", Duration: "15", VideoLink: "https://www.youtube.com/embed/uPqK6MAISTs?si=ll7ZI8nMrbjHOJ7z"},
     {VideoID: 2, CategoryID: 1, Title: "Video 002", FullDescription: "ציפי נגב כלים לרגיעה", Duration: "12", VideoLink: "https://www.youtube.com/embed/7qciYQFtKFg?si=oJ6pTtsuYfL_cyGt"},
-    {VideoID: 3, CategoryID: 5,  Title: "Video 003", FullDescription: "ציפי נגב עם עיסוי צוואר", Duration: "2:02", VideoLink: "https://www.youtube.com/embed/CDYq56KVDoM?si=aYHUAKbS2JRadRlO"},
+    {VideoID: 3, CategoryID: 5, Title: "Video 003", FullDescription: "ציפי נגב עם עיסוי צוואר", Duration: "2:02", VideoLink: "https://www.youtube.com/embed/CDYq56KVDoM?si=aYHUAKbS2JRadRlO"},
     {VideoID: 4, CategoryID: 5, Title: "Video 004", FullDescription: "ציפי נגב עם משאבים וכוחות פנימיים", Duration: "2:10", VideoLink: "https://www.youtube.com/embed/UYWZuuoNTQE?si=-Ha9BYvDgDMDFHSC"},
     {VideoID: 5, CategoryID: 2, Title: "Video 005", FullDescription: "ציפי נגב עם מגע הנכחה", Duration: "2:24", VideoLink: "https://www.youtube.com/embed/NjLP6a7ICU8?si=QHek2Vx5gEHzNCQu"},
     {VideoID: 6, CategoryID: 5, Title: "Video 006", FullDescription: "ציפי נגב עם תרגול המתנה", Duration: "1:41", VideoLink: "https://www.youtube.com/embed/DVA5au_6jHU?si=wcaDAp-8SDQKoYYH"},

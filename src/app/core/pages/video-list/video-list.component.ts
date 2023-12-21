@@ -4,6 +4,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from 'src/app/core/services/data.service';
 //import { ApiEndpointConstants } from 'src/app/core/constants/ApiEndpointsConstant';
 import { VideoListModel } from 'src/app/core/models/videolist-model';
+import { CategoryConstant } from 'src/app/core/constants/CategoryConstant';
+import { NgxSpinnerService } from "ngx-spinner";
 
 
 @Component({
@@ -16,8 +18,9 @@ export class VideoListComponent implements OnInit {
   
   videolistRecords: Array<VideoListModel> = [];
   categoryId!: number;
-
-  constructor(private dataService:DataService, private activatedRoute:ActivatedRoute, public domSanitizer: DomSanitizer){
+  title!: string;
+  
+  constructor(private dataService:DataService, private activatedRoute:ActivatedRoute, public domSanitizer: DomSanitizer, private spinner: NgxSpinnerService){
     this.activatedRoute.params.subscribe(q=>{
       this.categoryId = q['id'];
       this.load(this.categoryId);
@@ -25,15 +28,31 @@ export class VideoListComponent implements OnInit {
   }
  
   ngOnInit(): void {
-    // this.load(this.categoryId);
+        /** spinner starts on init */
+        this.spinner.show();
+        setTimeout(() => {
+          /** spinner ends after 5 seconds */
+          this.spinner.hide();
+        }, 1000);
   }
 
-  //load
-  load(Id:number){
+  load(Id:any){
+    /** spinner starts on init */
+    this.spinner.show();
+
+    //videos list
     let _videolistModel: any;
     _videolistModel = this.dataService.getVideos(Id);
     this.videolistRecords = _videolistModel;
-    console.log("load");
+
+    //title
+    const indexOfS = Object.values(CategoryConstant).indexOf(parseInt(Id));
+    this.title = Object.keys(CategoryConstant)[indexOfS];
+
+    /** spinner ends after 1 second */
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getVideoLink(videoID:number): any {

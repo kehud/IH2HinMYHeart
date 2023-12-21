@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,13 @@ import { VideoListComponent } from './core/pages/video-list/video-list.component
 
 import { HeaderComponent } from './common/components/header/header.component';
 import { FooterComponent } from './common/components/footer/footer.component';
+
+import { NgxSpinnerModule } from "ngx-spinner";
+
+// Available options
+interface NgxSpinnerConfig {
+  type?: string;
+}
 
 @NgModule({
   declarations: [
@@ -26,7 +34,9 @@ import { FooterComponent } from './common/components/footer/footer.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
   ],
   providers: [],
   bootstrap: [AppComponent]
